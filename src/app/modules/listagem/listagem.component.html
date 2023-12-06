@@ -1,0 +1,30 @@
+<div >
+  <div class="d-flex align-items-center border">
+    <i class="bi bi-box-seam mx-2 fs-5"></i>
+    <h4 class="py-1 m-0">Listagem de Produtos</h4>
+  </div>
+  <table class="table text-center border">
+    <thead>
+    <tr>
+      <th scope="col" class="py-3">Categoria</th>
+      <th scope="col" class="py-3">Nome</th>
+      <th scope="col" class="py-3">Preço</th>
+      <th scope="col" class="py-3">Descrição</th>
+      <th scope="col" class="py-3">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let produto of products">
+      <td class="py-3">{{ produto.categoria }}</td>
+      <td class="py-3">{{ produto.nome }}</td>
+      <td class="py-3">{{ produto.preco| currency:'BRL':'symbol':'1.2-2' }}</td>
+      <td class="py-3">{{ produto.descricao}}</td>
+      <td>
+        <i type="button" class="btn bi bi-pencil-fill fs-5" title="Editar" (click)="updateProdutos(produto)"></i>
+        <i type="button" class="btn bi bi-trash-fill fs-5" title="Excluir" (click)="deletarProdutos(produto)"></i>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
